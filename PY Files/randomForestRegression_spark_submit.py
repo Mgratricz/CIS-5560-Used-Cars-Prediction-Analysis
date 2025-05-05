@@ -31,7 +31,7 @@ spark = SparkSession(sc)
 # Commented out IPython magic to ensure Python compatibility.
 # %pyspark
 # 1. Load and preview data
-file_location = "/user/apang5/used_cars_data.csv"
+file_path = "/user/apang5/used_cars_data.csv"
 df = spark.read.option("header", "true").option("inferSchema", "true").csv(file_path)
 df.printSchema()
 df.show(5)
