@@ -22,7 +22,7 @@ from pyspark.ml.tuning import CrossValidator, ParamGridBuilder, TrainValidationS
 # Commented out IPython magic to ensure Python compatibility.
 # %pyspark
 
-IS_SPARK_SUBMIT_CLI = False
+IS_SPARK_SUBMIT_CLI = True
 
 from pyspark import SparkContext
 sc = SparkContext.getOrCreate()
@@ -31,7 +31,7 @@ spark = SparkSession(sc)
 # Commented out IPython magic to ensure Python compatibility.
 # %pyspark
 # 1. Load and preview data
-file_path = "/user/apang5/used_cars_sample_data--01percent.csv"
+file_location = "/user/apang5/used_cars_data.csv"
 df = spark.read.option("header", "true").option("inferSchema", "true").csv(file_path)
 df.printSchema()
 df.show(5)
